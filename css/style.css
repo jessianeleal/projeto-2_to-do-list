@@ -1,3 +1,98 @@
 body {
-font-family: 'Opens Sans',Arial, Helvetica, sans-serif
+font-family: 'Opens Sans',Arial, Helvetica, sans-serif;
+font-size: 10px;
+background-image: linear-gradient(90deg, #D8C5F8, #A5C4F7);
+margin: 0;
+box-sizing: border-box;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+text-align: center;
+}
+
+.container{
+    width: 70%;
+    background-color: #ffffff;
+    margin-top: 4em;
+}
+
+header {
+    position: fixed;
+    width: 70%;
+    z-index: 99;
+    background-color: #ffffff;
+    top: 4em;
+}
+
+h1 { 
+    padding: 2em 0;
+    font-size: 3em;
+    border-bottom: 1px solid #EAEAEA;
+    margin: 0;
+}
+
+.tarefas-novas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tarefas-novas__descricao {
+    width: 70%;
+    text-align: left;
+    border: 1px solid transparent;
+    font-size: 1.5em;
+    color: #757587;
+    font-weight: bold;
+    padding: 2.5em 0;
+}
+
+.btn_adicionar {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #B07FF1;
+    width: 100%;
+    padding: 0.5em 0;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    font-weight: bold;   
+}
+
+.tarefas-lista{ 
+    margin-top: 30em;
+    /* position: static; */
+}
+
+.tarefas-lista__itens {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.tarefa-lista__descricao {
+    width: 70%;
+    font-size: 1.8em;
+    text-align: left;
+    margin: 1em 0;
+    font-weight: bold;
+}
+
+.btn {
+    padding: 1em 0;
+   
+}
+
+.espaco-em-branco {
+   padding: 100% 0;     
+}
+
+.rodape {
+    background-color: #7820AE;
+    width: 70%;
+    font-size: 1.2em;
+    padding: 0.5em 0;
+    color: #ffffff;
+    position: fixed;
+    bottom: 0;
 }
