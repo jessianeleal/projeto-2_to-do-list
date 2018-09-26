@@ -1,5 +1,6 @@
 const btnAdd = document.getElementById("btnAdd");
 const novaTarefa = document.getElementById("novaTarefa");
+var idNum = 0
 
 btnAdd.addEventListener("click",function(evt){
     evt.preventDefault();
@@ -12,10 +13,12 @@ btnAdd.addEventListener("click",function(evt){
         return false;
     }
     
+    idNum++
+
     // Adicionar nova tarefa
     const itemLista = document.createElement("div");
     itemLista.innerHTML += ` 
-    <div class="tarefas-lista__itens">
+    <div class="tarefas-lista__itens" id="${idNum}">
         <p class="tarefa-lista__descricao">${novaTarefa.value}</p>
         <a href="#" class="btn_editar btn" title="Editar tarefa">
             <img src="img/edit.png" alt="editar">
