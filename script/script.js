@@ -16,11 +16,11 @@ btnAdd.addEventListener("click",function(evt){
     const itemLista = document.createElement("div");
     itemLista.innerHTML += ` 
     <div class="tarefas-lista__itens">
-        <p class="tarefa-lista__descricao"> ${novaTarefa.value}</p>
-        <a href="#" class="btn_editar btn">
+        <p class="tarefa-lista__descricao">${novaTarefa.value}</p>
+        <a href="#" class="btn_editar btn" title="Editar tarefa">
             <img src="img/edit.png" alt="editar">
         </a>
-        <a href="#" class="btn_remover btn">
+        <a href="#" class="btn_remover btn" title="Excluir tarefa">
             <img src="img/trash.png" alt="remover">
         </a>
     </div>`;
@@ -38,7 +38,7 @@ btnAdd.addEventListener("click",function(evt){
         evt.preventDefault();
         itemLista.remove()
      })
-     
+
      //Check na tarefa
      const descricaoTarefa = document.querySelector(".tarefa-lista__descricao")
      descricaoTarefa.addEventListener("click", function(evt){
@@ -51,6 +51,12 @@ btnAdd.addEventListener("click",function(evt){
     })
    
     //BONUS: Editar tarefa
-    const btnEdt = document.getElementById("btnEdt")
-        
+    const btnEdt = document.querySelector(".btn_editar")
+    btnEdt.addEventListener("click", function(evt){
+        evt.preventDefault();
+        console.log(descricaoTarefa.textContent)
+        novaTarefa.value = descricaoTarefa.textContent
+        itemLista.remove()
+    })
+
 })
