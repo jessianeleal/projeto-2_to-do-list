@@ -38,8 +38,19 @@ btnAdd.addEventListener("click",function(evt){
         evt.preventDefault();
         itemLista.remove()
      })
+     
+     //Check na tarefa
+     const descricaoTarefa = document.querySelector(".tarefa-lista__descricao")
+     descricaoTarefa.addEventListener("click", function(evt){
+        evt.preventDefault();
+        if (this.className==="tarefa-lista__descricao"){
+            this.className = "tarefa-lista__descricao_checked"
+        }else{
+            this.className = "tarefa-lista__descricao"
+        }
+    })
    
     //BONUS: Editar tarefa
     const btnEdt = document.getElementById("btnEdt")
         
-});
+})
