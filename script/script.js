@@ -13,6 +13,7 @@ btnAdd.addEventListener("click",function(evt){
         return false;
     }
     
+    // Adicionar +1 ao número do id
     idNum++
 
     // Adicionar nova tarefa
@@ -27,6 +28,7 @@ btnAdd.addEventListener("click",function(evt){
             <img src="img/trash.png" alt="remover">
         </a>
     </div>`;
+
     //Inserir trarefa 
     const tarefasLista = document.querySelector(".tarefas-lista")
     tarefasLista.insertBefore(itemLista,tarefasLista.childNodes[0])
@@ -61,5 +63,22 @@ btnAdd.addEventListener("click",function(evt){
         novaTarefa.value = descricaoTarefa.textContent
         itemLista.remove()
     })
+})
 
+// Cria evento de excluir todos os itens da lista
+const btnExcluir = document.querySelector(".geral__excluir");
+btnExcluir.addEventListener("click", function(evento) {
+    evento.preventDefault();
+    const tarefasLista = document.querySelector(".tarefas-lista");
+    tarefasLista.innerHTML = ""
+})
+
+// Cria evento de checar todos os itens da lista
+const btnChecar = document.querySelector(".geral__checar");
+btnChecar.addEventListener("click", function(evento) {
+        evento.preventDefault();
+        const tarefas = document.getElementsByTagName("p");
+        for (let i = 0; i <= tarefas.length; i++) {
+            tarefas[i].className = "tarefa-lista__descricao_checked";
+        }
 })
