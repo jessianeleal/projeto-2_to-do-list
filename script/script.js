@@ -18,13 +18,13 @@ btnAdd.addEventListener("click",function(evt){
 
     // Adicionar nova tarefa
     const itemLista = document.createElement("div");
-    itemLista.innerHTML += ` 
-    <div class="tarefas-lista__itens" id="${idNum}">
+    itemLista.innerHTML = ` 
+    <div class="tarefas-lista__itens" id="${idNum}" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" droppable=true>
         <p class="tarefa-lista__descricao">${novaTarefa.value}</p>
-        <a href="#" class="btn_editar btn" title="Editar tarefa">
-            <img src="img/edit.png" alt="editar">
+        <a href="#" class="btn_editar btn" title="Editar tarefa"onclick = "editar(event)">
+            <img src="img/edit.png" alt="editar" >
         </a>
-        <a href="#" class="btn_remover btn" title="Excluir tarefa">
+        <a href="#" class="btn_remover btn" title="Excluir tarefa" onclick = "excluir(event)">
             <img src="img/trash.png" alt="remover">
         </a>
     </div>`;
@@ -35,15 +35,7 @@ btnAdd.addEventListener("click",function(evt){
 
     // Limpar o campo de input após enviar
     novaTarefa.value = null;
-    novaTarefa.ins
     
-     //Excluir tarefa
-     const btnDel = document.querySelector(".btn_remover")
-     btnDel.addEventListener("click", function(evt){
-        evt.preventDefault();
-        itemLista.remove()
-     })
-
      //Check na tarefa
      const descricaoTarefa = document.querySelector(".tarefa-lista__descricao")
      descricaoTarefa.addEventListener("click", function(evt){
@@ -55,14 +47,7 @@ btnAdd.addEventListener("click",function(evt){
         }
     })
    
-    //BONUS: Editar tarefa
-    const btnEdt = document.querySelector(".btn_editar")
-    btnEdt.addEventListener("click", function(evt){
-        evt.preventDefault();
-        console.log(descricaoTarefa.textContent)
-        novaTarefa.value = descricaoTarefa.textContent
-        itemLista.remove()
-    })
+
 })
 
 // Cria evento de excluir todos os itens da lista
@@ -82,3 +67,38 @@ btnChecar.addEventListener("click", function(evento) {
             tarefas[i].className = "tarefa-lista__descricao_checked";
         }
 })
+
+
+//Drag and Drop
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    console.log("origem", data)
+    // console.log("alvo",ev.target.closest("div").index)
+    const tarefasLista = document.querySelector(".tarefas-lista")
+    console.log(ev.target.parentElement)
+    ev.target.parentNode.insertAdjacentElement('beforebegin',document.getElementById(data));
+}
+
+    //Editar tarefa
+    function editar(ev){
+    const btnEdt = document.getElementById(ev.target.closest("div").id)
+    ev.preventDefault();
+    novaTarefa.value = btnEdt.children[0].textContent
+    btnEdt.remove()
+    }
+
+     //Excluir tarefa
+    function excluir(ev){
+    const btnDel = document.getElementById(ev.target.closest("div").id)
+    ev.preventDefault();
+    btnDel.remove()
+    }

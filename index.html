@@ -8,25 +8,24 @@
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            
-            <h1>Adicione uma nova tarefa</h1>
-            <div class="tarefas-novas">
-                <label for="novaTarefa" class="tarefas-novas__rotulo"></label>
-                <input type="text" class="tarefas-novas__descricao" id="novaTarefa" placeholder="Digite aqui a sua nova tarefa">
-                <a href="" class="btn_adicionar" id="btnAdd" title="Adicionar tarefa">add</a>
+    <div class="container" droppable = false>
+        <header droppable=false>
+            <h1 droppable=false >Adicione uma nova tarefa</h1>
+            <div class="tarefas-novas" droppable=false>
+                <label for="novaTarefa" class="tarefas-novas__rotulo" droppable=false></label>
+                <input type="text" class="tarefas-novas__descricao" id="novaTarefa" placeholder="Digite aqui a sua nova tarefa" droppable=false>
+                <a href="" class="btn_adicionar" id="btnAdd" title="Adicionar tarefa" droppable=false>add</a>
             </div>
         </header>
-        <main class="tarefas-lista">           
+        <main class="tarefas-lista" droppable=false>           
         </main>
-        <div class="espaco-em-branco"></div>
+        <div class="espaco-em-branco"droppable=false></div>
     </div>
-    <div class="geral"> 
-            <button class="botao geral__excluir">Excluir lista de tarefas</button>
-            <button class="botao geral__checar">Marcar todas como concluídas</button>
+    <div class="geral" droppable=false> 
+            <button class="botao geral__excluir" droppable=false>Excluir lista de tarefas</button>
+            <button class="botao geral__checar" droppable=false>Marcar todas como concluídas</button>
         </div>
-    <footer class="rodape">&copy Copyrigth 2018 JJScripts</footer>
+    <footer class="rodape" droppable=false>&copy Copyrigth 2018 JJScripts</footer>
 </body>
     <script src="script/script.js"></script>
 </html>
