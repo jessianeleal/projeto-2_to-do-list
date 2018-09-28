@@ -109,7 +109,6 @@ function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     var origem = document.getElementById(data);
-    origem.remove()
  if (ev.target.tagName === "P" || ev.target.tagName === "A" || ev.target.tagName === "IMG"){
     ev.target.closest("li").insertAdjacentHTML("afterEnd", origem.outerHTML)
  } else if (ev.target.id !== null) {
@@ -117,4 +116,5 @@ function drop(ev) {
  }else{
      return false
  }
+ origem.remove()
 }
