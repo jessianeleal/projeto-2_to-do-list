@@ -50,18 +50,22 @@ h1 {
     text-transform: uppercase;
     font-weight: bold;   
 }
+.tarefas-lista{
+    word-wrap:break-word;
+    padding:0;
+}
 
 .tarefas-lista__itens {
     display: flex;
     justify-content: space-around;
     border-bottom: 1px solid #EAEAEA;
-}
+    }
 
 .tarefa-lista__descricao {
     width: 70%;
     font-size: 1.8em;
     text-align: left;
-    margin: 1em 0;
+    margin:1em 0;
     font-weight: bold;
 }
 
@@ -117,3 +121,50 @@ h1 {
     position: fixed;
     bottom: 0;
 }
+
+@media (max-width: 768px) {
+    .container{
+        width: 60%;
+        background-color: #ffffff;
+    }
+
+    .geral {
+        width: 60%;
+    }
+
+    .rodape {
+        width: 60%;
+    }
+
+}
+
+
+@media (max-width: 425px) {
+    .container{
+        width: 100%;
+        /* background-color: #ffffff; */
+        background-image: linear-gradient(90deg, #D8C5F8, #A5C4F7);
+        margin-top: 0;
+    }
+
+    .geral {
+        width: 100%;
+    }
+
+    .rodape {
+        width: 100%;
+    }
+
+    .tarefas-novas__descricao {
+        background-color: transparent;
+    }
+
+    h1 { 
+        border-bottom: 1px solid #7820AE;
+    }
+
+    .tarefas-lista__itens {
+        border-bottom: 1px solid #7820AE;
+    }
+}
+
