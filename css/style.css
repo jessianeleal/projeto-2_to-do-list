@@ -139,10 +139,9 @@ h1 {
 }
 
 
-@media (max-width: 425px) {
+@media (max-width: 420px) {
     .container{
         width: 100%;
-        /* background-color: #ffffff; */
         background-image: linear-gradient(90deg, #D8C5F8, #A5C4F7);
         margin-top: 0;
     }
